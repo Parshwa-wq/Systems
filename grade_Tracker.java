@@ -1,6 +1,7 @@
 import java.util.*;
 class Student
 {
+    int class_size;
     int snum;
     String ID;
     String name;
@@ -18,7 +19,13 @@ class Student
         System.out.print("Enter number of student: ");
         snum=input.nextInt();
         System.out.println();
+        class_size+=snum;
 
+        if(class_size>100)
+        {
+            System.out.print("cannot add more than 100 students in one class.");
+            return;
+        }
 
         for(int i=0;i<snum;i++)
         {
