@@ -34,6 +34,10 @@ class store
         int y=Integer.parseInt(darr[2]);
         for(int i=0;;i++)
         {
+            darr=arr[size].exp_date.split("/",3);
+            d=Integer.parseInt(darr[0]);
+            m=Integer.parseInt(darr[1]);
+            y=Integer.parseInt(darr[2]);
             if(arr[size].exp_date.length()!=10 || arr[size].exp_date.charAt(2)!='/' || arr[size].exp_date.charAt(5)!='/')
             {
             System.out.println("follow this format(DD/MM/YYYY)\npls... try again!!");
