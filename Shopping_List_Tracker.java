@@ -26,6 +26,18 @@ class store
         arr[size].quantity=input.nextInt();
         System.out.print("Price: ");
         arr[size].price=input.nextDouble();
+
+        while(true)
+        {
+            if(arr[size].price<0)
+            {
+                System.out.print("pls enter valid price: ");
+                arr[size].price=input.nextDouble();
+            }
+            else
+            break;
+        }
+            
         System.out.print("expiration date(DD/MM/YYYY): ");
         arr[size].exp_date=input.next();
         String[] darr=arr[size].exp_date.split("/",3);
