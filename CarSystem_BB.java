@@ -18,7 +18,7 @@ class car_system
         for(int i=currentindex ;i<currentindex + noofcars;i++)
         {
             arr[i] = new car_system();
-            System.out.println("---------------------------------");
+            System.out.println("--------------------------------");
             System.out.println("Enter Details for Car no " + i);
             System.out.print("Enter Registration no for car: " + i);
             arr[i].RegistrationNo = sc.next();
