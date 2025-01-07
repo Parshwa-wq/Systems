@@ -1,29 +1,29 @@
-import java.util.ArrayList;
-import java.util.Scanner;
-
+import java.util.*;
 class Transaction 
 {
     String description;
     double amount;
     String category;
     
-    Transaction(String description, double amount, String category) 
+    Transaction(String description1, double amount1, String category1) 
     {
-        this.description = description;
-        this.amount = amount;
-        this.category = category;
+        description = description1;
+        amount = amount1;
+        category = category1;
     }
 }
 
 class BudgetTracker 
 {
-    private ArrayList<Transaction> incomeList = new ArrayList<>();
-    private ArrayList<Transaction> expenseList = new ArrayList<>();
-    private double monthlyBudget;
-    private Scanner sc = new Scanner(System.in);
+    int incomeSize = 0;
+    int expenseSize = 0;
+    Transaction[] incomeArr = new Transaction[100];
+    Transaction[] expenseArr = new Transaction[100];
+    double monthlyBudget;
+    Scanner sc = new Scanner(System.in);
 
-    // Method to add income or expense
-    public void addTransaction() {
+    void addTransaction() 
+    {
         System.out.println("Enter type (1 for Income, 2 for Expense): ");
         int type = sc.nextInt();
         sc.nextLine();  // Consume newline
@@ -40,54 +40,67 @@ class BudgetTracker
 
         if (type == 1) 
         {
-            incomeList.add(new Transaction(description, amount, category));
-        } else if (type == 2) 
+            if (incomeSize < 100) 
+            {
+                incomeArr[incomeSize++] = new Transaction(description, amount, category);
+            } 
+            else 
+            {
+                System.out.println("Cannot add more than 100 income transactions.");
+            }
+        } 
+        else if (type == 2) 
         {
-            expenseList.add(new Transaction(description, amount, category));
-        } else 
+            if (expenseSize < 100) 
+            {
+                expenseArr[expenseSize++] = new Transaction(description, amount, category);
+            } 
+            else 
+            {
+                System.out.println("Cannot add more than 100 expense transactions.");
+            }
+        } 
+        else 
         {
             System.out.println("Invalid type! Please try again.");
         }
     }
 
-    // Method to view all income and expenses
-    public void viewTransactions() 
+    void viewTransactions() 
     {
-        System.out.println("Income:");
-        for (Transaction t : incomeList) 
+        System.out.println("Income Transactions:");
+        for (int i = 0; i < incomeSize; i++) 
         {
-            System.out.println("Description: " + t.description + ", Amount: " + t.amount + ", Category: " + t.category);
+            System.out.println("Description: " + incomeArr[i].description + ", Amount: " + incomeArr[i].amount + ", Category: " + incomeArr[i].category);
         }
 
-        System.out.println("Expenses:");
-        for (Transaction t : expenseList) 
+        System.out.println("Expense Transactions:");
+        for (int i = 0; i < expenseSize; i++) 
         {
-            System.out.println("Description: " + t.description + ", Amount: " + t.amount + ", Category: " + t.category);
+            System.out.println("Description: " + expenseArr[i].description + ", Amount: " + expenseArr[i].amount + ", Category: " + expenseArr[i].category);
         }
     }
 
-    // Method to calculate total income and total expenses
-    public void calculateTotal() 
+    void calculateTotal() 
     {
         double totalIncome = 0;
         double totalExpenses = 0;
 
-        for (Transaction t : incomeList) 
+        for (int i = 0; i < incomeSize; i++) 
         {
-            totalIncome += t.amount;
+            totalIncome += incomeArr[i].amount;
         }
         
-        for (Transaction t : expenseList) 
+        for (int i = 0; i < expenseSize; i++) 
         {
-            totalExpenses += t.amount;
+            totalExpenses += expenseArr[i].amount;
         }
 
         System.out.println("Total Income: " + totalIncome);
         System.out.println("Total Expenses: " + totalExpenses);
     }
 
-    // Method to set monthly budget for categories
-    public void setBudget() 
+    void setBudget() 
     {
         System.out.println("Enter your monthly budget limit:");
         monthlyBudget = sc.nextDouble();
@@ -95,36 +108,35 @@ class BudgetTracker
         System.out.println("Monthly budget has been set to: " + monthlyBudget);
     }
 
-    // Method to check if expenses are within budget
-    public void checkBudget() 
+    void checkBudget() 
     {
         double totalExpenses = 0;
 
-        for (Transaction t : expenseList) 
+        for (int i = 0; i < expenseSize; i++) 
         {
-            totalExpenses += t.amount;
+            totalExpenses += expenseArr[i].amount;
         }
 
         System.out.println("Total Expenses: " + totalExpenses);
         if (totalExpenses <= monthlyBudget) 
         {
             System.out.println("You are within your budget!");
-        } else {
+        } 
+        else 
+        {
             System.out.println("You have exceeded your budget!");
         }
     }
-    
-    // Method to exit the program
-    public void exitProgram() 
+
+    void exitProgram() 
     {
         System.out.println("Exiting program...");
         System.exit(0);
     }
 }
 
-class Personal_Budget_Tracker 
+class TEST 
 {
-    /*----------------------------------Coded by Binary Brains----------------------------------*/
     public static void main(String[] args) 
     {
         BudgetTracker tracker = new BudgetTracker();
