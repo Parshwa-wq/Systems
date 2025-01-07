@@ -178,6 +178,7 @@ void sortBySalary()
 //main class for calling methods
 class EmployData
 {
+    /*----------------------------------Coded by Binary Brains----------------------------------*/
 public static void main(String []args)
 {
     Employe ob = new Employe();
