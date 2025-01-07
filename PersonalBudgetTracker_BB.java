@@ -122,8 +122,9 @@ class BudgetTracker
     }
 }
 
-public class Personal_Budget_Tracker 
+class Personal_Budget_Tracker 
 {
+    /*----------------------------------Coded by Binary Brains----------------------------------*/
     public static void main(String[] args) 
     {
         BudgetTracker tracker = new BudgetTracker();
