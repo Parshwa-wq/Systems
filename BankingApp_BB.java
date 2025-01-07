@@ -5,7 +5,7 @@ class Bankdetails{
     String acctype;
     long balance;
     Scanner sc=new Scanner(System.in);
-    //this method is for opening new account
+    //this method is for opening new account.
      Bankdetails(){
         System.out.print("Enter Account no ");
         acc=sc.nextLine();
