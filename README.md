@@ -19,16 +19,19 @@ The systems in this repository are designed to:
 The repository will contain various Java-based systems that can be downloaded and run locally. Some of the systems you’ll find here include:
 
 - **Bankingapp**  
-  A system to manage bank accounts, transactions, deposits, and withdrawals.
+  A system to manage bank accounts, transactions, deposits, and withdrawals etc...
   
 - **Student Grade Tracker**  
-  Track student grades, calculate averages, and generate reports.
+  Track student grades, calculate averages, and generate reports and etc...
   
 - **Shopping List Tracker**  
-  Create and manage shopping lists, calculate total prices, and categorize items.
+  Create and manage shopping lists, calculate total prices, and categorize items etc...
 
 - **Employee Data Management**  
-  Manage employee records, payrolls, attendance, and performance reviews.
+  Manage employee records, payrolls, attendance, and performance reviews and all.
+
+- **Personal Budget Tracker**
+  Create and manage personal budget lists and calculate total price reports etc... 
 
 The repository will continue to grow as more systems are added. Please feel free to contribute or suggest new systems to be included!
 
