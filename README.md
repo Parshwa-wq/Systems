@@ -70,3 +70,6 @@ cd Shopping_list_Tracker
 - Code style: Ensure the code is clean and follows Java best practices.
 - Documentation: Document your code and update the README with setup and usage instructions if necessary.
 - Testing: If applicable, add tests to verify the functionality of your changes.
+
+# License
+- This project is licensed under the MIT License - see the `LICENSE` file for details.
