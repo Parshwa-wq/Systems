@@ -1,4 +1,4 @@
-e# Systems Repository
+# Systems Repository
 
 Welcome to the **Systems Repository**! 🎉
 
