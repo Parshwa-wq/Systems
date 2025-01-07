@@ -106,7 +106,7 @@ class Studentgradelj
 {
     public static void main(String []args)
     {
-        /*----------------------------------Coded by Binary Brains----------------------------------*/
+        /*---------------------------------Coded by Binary Brains---------------------------------*/
         Scanner sc=new Scanner(System.in);
         System.out.println("Enter the number of student");
         int student=sc.nextInt();
