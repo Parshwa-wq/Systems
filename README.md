@@ -43,6 +43,7 @@ The repository will continue to grow as more systems are added. Please feel free
 Each system will be organized in its own directory and include:
 - **README.md**: Instructions on how to set up and use the system.
 - **Source code (Java)**: All the relevant code files for the system.
+- **LICENSE**: The MIT license for the project.
 
 ## How to Use
 
