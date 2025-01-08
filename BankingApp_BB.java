@@ -9,25 +9,28 @@ class Bankdetails {
 
     // this method is for opening new account
     void bankDetails() {
-        System.out.print("Enter Account no ");
+        System.out.print("Enter Account number: ");
         acc = sc.nextLine();
-        System.out.print("Enter Account Type  ");
+        System.out.print("Enter Account Type (Saving | Current ):  ");
         acctype = sc.nextLine();
-        System.out.print("Enter Account Holder Name ");
+        System.out.print("Enter Account Holder Name: ");
         name = sc.nextLine();
-        System.out.print("Enter Initial Balance ");
+        System.out.print("Enter Initial Balance(MIN 5000): ");
         balance = sc.nextLong();
         System.out.println();
     }
 
     // This method is for display the details of the accounts
     void displayacc() {
-        System.out.println("Name of the account holder is " + name);
-        System.out.println("Account no is " + acc);
-        System.out.println("Account type is " + acctype);
-        System.out.println("Initial balance in the account is " + balance);
+        System.out.println("Name of the account holder is:  " + name);
+        System.out.println("Account no is:  " + acc);
+        System.out.println("Account type is:  " + acctype);
+        System.out.println("Initial balance in the account is:  " + balance);
+        sc.nextLine();
+        System.out.println("Press Enter To Continue...");
+        sc.nextLine();
     }
-
+    
     // This method is for deposit money
     void deposit() {
         long amount;
@@ -68,8 +71,8 @@ class Bankingapp {
         int choice;
         do {
             System.out.println("\n-------BANKING SYSTEM APPLICATION-------");
-            System.out.println(
-                    " 1. Creat A Account\n 2.Display all account deatils\n3.Search acc by Account type\n4.Deposit the amount\n5.Withdraw the amount\n6.Exit");
+            System.out.println("1.Creat A Account\n2.Display all account deatils\n3.Search acc by Account type\n4.Deposit the amount\n5.Withdraw the amount\n6.Exit");
+            System.out.print("Enter (1-6) : ");
             choice = sc.nextInt();
             switch (choice) {
 
