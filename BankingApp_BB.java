@@ -77,6 +77,7 @@ class Bankingapp{
             for(int i=0;i<arr.length;i++){
                 arr[i].displayacc();
                 System.out.println("HELLO");
+                System.out.println("hello");
             }
             break;
             //hii this is test
