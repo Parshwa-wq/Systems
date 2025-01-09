@@ -1,11 +1,13 @@
 import java.util.*;
-class LJStudent{
+class LJStudent
+{
     int rollno;
     String name;
     double javat1t2;
     static String lj="LJIET";
     Scanner sc=new Scanner(System.in);
-    void set(){
+    void set()
+    {
         System.out.println("Enter the rollnumber of the student");
         rollno=sc.nextInt();
         sc.nextLine();
@@ -83,22 +85,28 @@ class LJStudent{
     }
 }
 
-    void HomeVisit(LJStudent arr[]){
-       for(int i = 0 ; i<arr.length ; i++){
-          if(arr[i].javat1t2 < 18 ){
+    void HomeVisit(LJStudent arr[])
+    {
+       for(int i = 0 ; i<arr.length ; i++)
+       {
+          if(arr[i].javat1t2 < 18 )
+          {
            System.out.println(arr[i].name);
-        }
+          }
+       }
     }
-}
-    double highest(LJStudent arr[]){
+    double highest(LJStudent arr[])
+    {
     double max = arr[0].javat1t2;
-    for(LJStudent x : arr){
-        if( x.javat1t2 > max){
+    for(LJStudent x : arr)
+    {
+        if( x.javat1t2 > max)
+        {
         max = x.javat1t2;
         } 
     }
     return max;
-}
+    }
 }
 
 
