@@ -1,0 +1,14 @@
+/*
+ * Eclipsera: The Final Rebellion
+ * Copyright (C) 2025 NovaTech INTERACTIVES
+ * Licensed under the NovaTech INTERACTIVES EXCLUSIVE LICENSE (NTIEL)
+ * 
+ * Contributions to the project are allowed, but the original story, mechanics, and branding
+ * remain the intellectual property of NovaTech INTERACTIVES. Unauthorized commercial use,
+ * reproduction, or redistribution is strictly prohibited.
+ * 
+ * For licensing inquiries, contact: dhruvharani5@gmail.com
+ */
+
+1) i have to make checkpoint array in which i will store progress when a episode i finished
+2) if wrong character chossen then random things glitches are shown and security is increaseed
