@@ -1,6 +1,7 @@
 import java.util.*;
 class Student
 {
+    int size;
     int class_size;
     int snum;
     String ID;
@@ -11,55 +12,51 @@ class Student
     int marks1;
     int marks2;
     int marks3;
-    Student[] arr = new Student[100];
+    Student[] arr = new Student[50];
     Scanner input=new Scanner(System.in);
 
     void getDetails()
     {
-        System.out.print("Enter number of student: ");
-        snum=input.nextInt();
-        System.out.println();
-        class_size+=snum;
-
-        if(class_size>100)
+        if(size>100)
         {
-            System.out.print("cannot add more than 100 students in one class.");
+            System.out.print("can't add more than 50 students");
             return;
         }
 
-        for(int i=0;i<snum;i++)
+        else
         {
-            arr[i]=new Student();
+            arr[size]=new Student();
             System.out.print("Enter Student ID: ");
-            arr[i].ID=input.next();
+            arr[size].ID=input.next();
             System.out.print("Enter Student Name: ");
-            arr[i].name=input.next();
+            arr[size].name=input.next();
 
             System.out.print("Enter Subject1: ");
-            arr[i].sub1=input.next();
+            arr[size].sub1=input.next();
             System.out.print("Enter marks: ");
-            arr[i].marks1=input.nextInt();
+            arr[size].marks1=input.nextInt();
             System.out.println();
 
             System.out.print("Enter Subject2: ");
-            arr[i].sub2=input.next();
+            arr[size].sub2=input.next();
             System.out.print("Enter marks: ");
-            arr[i].marks2=input.nextInt();
+            arr[size].marks2=input.nextInt();
             System.out.println();
 
             System.out.print("Enter Subject3: ");
-            arr[i].sub3=input.next();
+            arr[size].sub3=input.next();
             System.out.print("Enter marks: ");
-            arr[i].marks3=input.nextInt();
+            arr[size].marks3=input.nextInt();
             System.out.println();
-            
+
+            size++;
         }
     }
 
     void displayStudent(String id)
     {
         int count=0;
-        for(int i=0;i<snum;i++)
+        for(int i=0;i<size;i++)
         {
             if(arr[i].ID.equals(id))
             {
@@ -82,7 +79,7 @@ class Student
     void average(String id)
     {
         int count=0;
-        for(int i=0;i<snum;i++)
+        for(int i=0;i<size;i++)
         {
             if(arr[i].ID.equals(id))
             {
@@ -99,7 +96,7 @@ class Student
     void highestAverage(int ave)
     {
         int count=0;
-        for(int i=0;i<snum;i++)
+        for(int i=0;i<size;i++)
         {
             int Average=(arr[i].marks1+arr[i].marks2+arr[i].marks3)/3;
             if(Average>ave)
