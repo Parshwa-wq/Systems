@@ -146,5 +146,5 @@ We also extend our appreciation to the entire **Binary Brains** team for their e
 ## 🏢 A **NovaTech INTERACTIVES** Creation
 
 🎮 **Engineering the Future of Play**\
-🌟 **A Northstar Production**
+🌟 **A Northstar Production** 
 
