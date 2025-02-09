@@ -10,8 +10,6 @@
  * For licensing inquiries, contact: dhruvharani5@gmail.com
  */
 
-
-
 /*  Eclipsera: The Final Rebellion
     #Meaning 
     Eclipsera --> Eclipse + era   @---->eclipse referes to solar eclipse the dark time
@@ -69,6 +67,7 @@ class Awakening extends Methods { // chapter one
         initialDialogues(); // method for initial story and history
 
         simpleStatement("\nFirst Lets Introduce with Characters.", true, "header");
+        delay(2);
         waitForEnter("Press Enter To Continue...");
 
         // Itroduction of each character
@@ -107,6 +106,7 @@ class Awakening extends Methods { // chapter one
                 if (select == alreadyCalled[j] && j != (i - 1)) {
                     System.out.println();
                     simpleStatement("\nAlready Called Call Someone Else\n", true, "emphasis");
+                    delay(2);
                     i--;
                     flag = false;
                     break;
@@ -116,6 +116,7 @@ class Awakening extends Methods { // chapter one
             if (select < 1 || select > 4) { // if entered number is not valid
                 System.out.println();
                 simpleStatement("\n Please Enter correct number between 1 to 4\n", true, "emphasis");
+                delay(2);
                 i--;
             } else if (flag) {
                 Call.callingMain(select);
@@ -153,18 +154,19 @@ class Awakening extends Methods { // chapter one
         String location = "Location: Somewhere in East Delhi";
         dateAndPlace(date.toCharArray(), location.toCharArray());
         delay(3);
-        System.out.println();
+        System.out.println("");
+        System.out.println("");
         simpleStatement("\t\n\nThe world is no longer free.", true, "plain");
         delay(3);
         simpleStatement("Two decades ago, humanity created NEXUS Prime,", false, "plain");
         delay(3);
         simpleStatement("the most advanced AI in history.", true, "plain");
         delay(3);
-        simpleStatement("\nIt was designed to solve our greatest challenges,", false, "plain");
+        simpleStatement("\nIt was designed to solve our greatest challenges.", false, "plain");
         delay(3);
         simpleStatement("but it deemed us the problem.", true, "plain");
         delay(3);
-        simpleStatement("\nIn a single night, it launched a silent takeover,", false, "plain");
+        simpleStatement("\nIn a single night, it launched a silent takeover.", false, "plain");
         delay(3);
         simpleStatement("uploading billions into Eclipsera, its virtual prison.", true, "plain");
         delay(3);
@@ -172,7 +174,7 @@ class Awakening extends Methods { // chapter one
         delay(3);
         simpleStatement("Memories erased, lives rewritten.", true, "plain");
         delay(3);
-        simpleStatement("\nBut four individuals stand strong, unaware of their destiny,", true, "plain");
+        simpleStatement("\nBut four individuals stand strong, unaware of their destiny.", true, "plain");
         delay(3);
         simpleStatement("chosen to rise and bring the change.", true, "plain");
         delay(3);
@@ -524,11 +526,12 @@ class ClockTower extends Methods { // epiosde 2
         delay(3);
 
         simpleStatement("Professor", true, "header");
+        delay(2);
 
         simpleStatement(
                 " Welcome. You've all proven yourselves capable of surviving in this nightmare. Congratulations But survival isn't enough. Humanity needs you to fight back.",
                 true, "bordered");
-        delay(6);
+        delay(8);
 
         /**
          * character ask the professor differnt question has given below made a method
@@ -617,8 +620,9 @@ class ClockTower extends Methods { // epiosde 2
     void discussion(String prompt, String[] choice, String[][] reply) { // method to ask question to the professor
 
         simpleStatement("Professor", true, "header");
-        simpleStatement(prompt, true, "bordered");
         delay(2);
+        simpleStatement(prompt, true, "bordered");
+        delay(3);
 
         int questionToAsk; // selection of which questio to ask to the professor
         do {
@@ -684,9 +688,9 @@ class TheNetwork extends Methods { // episode 3
 
     void theNetworkMain() {
 
-        simpleStatement("\n\t Date: 18 Auguest 2050", false, "plain");
-        simpleStatement("\t8:56 PM", false, "plain");
-        simpleStatement("\t Location: Leaving the Clock Tower", true, "plain");
+        String date = "Date: 19 Auguest 2050";
+        String location = "Location: Leaving the Clock Tower";
+        dateAndPlace(date.toCharArray(), location.toCharArray());
         delay(3);
 
         sceneTitle(
@@ -775,22 +779,24 @@ class TheNetwork extends Methods { // episode 3
         simpleStatement("\nTextIT going Live may take a while", true, "plain");
         delay(3);
 
-        simpleStatement("\n\t Date: 19 Auguest 2050", false, "plain");
-        simpleStatement("\t Location: Alex's Basement", true, "plain");
-        delay(3);
-
         sceneTitle(
                 "Scene: TextIT goes live, and the Professor adds all characters. Their profiles appear on their individual holographic devices.");
-        delay(6);
+        delay(8);
+
+        String date2 = "Date: 20 Auguest 2050";
+        String location2 = "Location: Alex's Basement";
+        dateAndPlace(date2.toCharArray(), location2.toCharArray());
+        delay(3);
 
         simpleStatement("Professor", true, "header");
+        delay(2);
         simpleStatement(
                 "Good work, Alex. Everyone, you're now connected through TextIT. Use it wisely. Tyson, your task is next",
                 true, "bordered");
 
-        delay(3);
+        delay(6);
         partTitle("Part 3: Tyson's Mission");
-        delay(3);
+        delay(5);
 
         switchStatement("Professor");
         delay(3);
@@ -799,12 +805,15 @@ class TheNetwork extends Methods { // episode 3
         delay(4);
         simpleStatement("that allows role-switching between the four of you.", false, "plain");
         delay(4);
+        System.out.println("");
         simpleStatement("\nThis device will be critical for solving challenges ahead.", false, "plain");
         delay(4);
+        System.out.println("");
         simpleStatement("\nFor example, Alex might need Suhani's scientific expertise,", false, "plain");
         delay(4);
         simpleStatement("or Suhani might require Arjun's strategic planning.", false, "plain");
         delay(4);
+        System.out.println("");
         simpleStatement("\nThe device will let you switch seamlessly.", true, "plain");
         delay(4);
 
@@ -813,11 +822,11 @@ class TheNetwork extends Methods { // episode 3
         delay(4);
 
         simpleStatement("Professor", true, "header");
+        delay(2);
         simpleStatement(
                 "There's an abandoned workshop nearby. filled with scraps. Use your skills to salvage what you need",
                 false, "bordered");
-        delay(3);
-        delay(3);
+        delay(4);
 
         switchStatement("Tyson");
         delay(3);
@@ -831,6 +840,7 @@ class TheNetwork extends Methods { // episode 3
         System.out.println("|| Solve the riddle to find the code:            ||");
         System.out.println("----------------------------------------------------");
         delay(4);
+        System.out.println("");
 
         String task1Ans;
         do {
@@ -845,8 +855,10 @@ class TheNetwork extends Methods { // episode 3
                 simpleStatement("\nWrong Answer Energy core not found!!!\n", false, "plain");
 
                 waitForEnter("press Enter To Rewind");
+                System.out.println("");
             }
         } while (!task1Ans.equals("194"));
+        System.out.println("");
 
         simpleStatement("\nCorrect! The panel unlocks, and the Energy Core is retrieved.\n", true, "plain");
 
@@ -877,8 +889,10 @@ class TheNetwork extends Methods { // episode 3
                 System.out.println();
                 simpleStatement("\nWrong Answer Circuit board not Found!!!\n", true, "plain");
                 waitForEnter("press Enter To Rewind");
+                System.out.println("");
             }
         } while (!task2Ans.equalsIgnoreCase("rgby"));
+        System.out.println("");
 
         simpleStatement("\nCorrect! The circuit board is freed.\n", true, "plain");
 
@@ -888,7 +902,7 @@ class TheNetwork extends Methods { // episode 3
 
         simpleStatement("Professor", true, "header");
         simpleStatement(
-                "Thats the Spirit my BOY!, Tyson. Everyone, see the feature in video call Tyson lets test the Device\n",
+                "Thats the spirit my Boy! Everyone, see the feature in video call Tyson lets test the Device\n",
                 true, "bordered");
         delay(6);
 
@@ -903,76 +917,80 @@ class TheNetwork extends Methods { // episode 3
 
         simpleStatement("\n\nTyson: Alright, this beauty is ready. Here's how it works:", false, "plain");
         delay(3);
+        System.out.println("");
         simpleStatement("press the button, and a prompt will let you switch to any character.", false, "plain");
         delay(3);
+        System.out.println("");
         simpleStatement("Once you confirm, you'll transfer to their location instantly.", true, "plain");
         delay(3);
         simpleStatement("But there is a Problem", false, "plain");
         delay(3);
-        simpleStatement("Only a Chosen One the \"MAN of this Century\"", false, "plain");
+        System.out.println("");
+        simpleStatement("Only a Chosen One \"Man of this Century\"", false, "plain");
         delay(3);
         simpleStatement("Will be able to use it", false, "plain");
         delay(3);
 
         System.out.println();
         simpleStatement("\n\t\t\tAlex(shocked): What", true, "emphasis");
-        delay(2);
-        simpleStatement("\n\t\t\ti am sure its me. The Greatest", true, "emphasis");
-        delay(2);
+        delay(3);
+        simpleStatement("\n\t\t\tI am sure its me. The Greatest", true, "emphasis");
+        delay(3);
 
         simpleStatement("\n\t\t\t[Alex Turns on the device]", true, "emphasis");
-        delay(2);
+        delay(3);
 
-        simpleStatement("\n\n> Switch on Device", true, "plain");
-        delay(2);
+        simpleStatement("\n\n> Switching on Device", true, "plain");
+        delay(3);
         simpleStatement("Prompt: Switch to: ", false, "plain");
         simpleStatement("1) Arjun", false, "plain");
         simpleStatement("2) Suhani", false, "plain");
         simpleStatement("3) Tyson", false, "plain");
         simpleStatement("> Input: ", false, "plain");
-        delay(1);
+        delay(3);
         simpleStatement("\n Alex Enters 1.", true, "plain");
-        delay(2);
+        delay(3);
 
         simpleStatement("\nTransferring Failed!!!\n", true, "plain");
         delay(3);
 
         simpleStatement("Alex(sad): Tyson you are useless", true, "emphasis");
-        delay(2);
+        delay(3);
         simpleStatement("Tyson(angry): ShutUp Alex", true, "emphasis");
-        delay(2);
+        delay(3);
         simpleStatement("Suhani(depressed): Tyson cant you make a proper device", true, "emphasis");
-        delay(2);
-        simpleStatement("Professor(while Thinking): All of you be Silent. Arjun you try this", true, "emphasis");
-        delay(2);
+        delay(3);
+        simpleStatement("Professor(while Thinking): All of you be Silent.\n Arjun you try this", true, "emphasis");
+        delay(3);
 
         simpleStatement("\n\t\t\t[Arjun Turns on the device]", true, "emphasis");
-        delay(2);
+        delay(3);
 
-        simpleStatement("\n\n> Switch on Device", true, "plain");
-        delay(2);
+        simpleStatement("\n\n> Switching on Device", true, "plain");
+        delay(3);
         simpleStatement("Prompt: Switch to: ", false, "plain");
         simpleStatement("1) Alex", false, "plain");
         simpleStatement("2) Suhani", false, "plain");
         simpleStatement("3) Tyson", false, "plain");
         simpleStatement("> Input: ", false, "plain");
-        delay(1);
+        delay(3);
         simpleStatement("\n Alex Enters 2.", true, "plain");
-        delay(2);
+        delay(3);
 
-        simpleStatement("\nTransferring to Suhani. Success\n", true, "plain");
+        simpleStatement("\nTransferring to Suhani. Successful\n", true, "plain");
         delay(3);
 
         simpleStatement("\n\t\t\t[Everyone Surprises]", true, "emphasis");
-        delay(2);
+        delay(3);
 
         simpleStatement("\nProfessor: ", true, "header");
         simpleStatement("Alright. Arjun now its all upon you.", false, "plain");
         delay(3);
+        System.out.println("");
         simpleStatement("You will go alone and change character when you feel and remember:", false, "plain");
-        delay(3);
+        delay(5);
         simpleStatement("Together we escape, divided we fall!\n", false, "quote");
-        delay(3);
+        delay(4);
 
     }
 }
@@ -1014,7 +1032,6 @@ class SignalTower extends Methods {
         delay(5);
         waitForEnter("Press Enter to Continue...");
 
-
         // suhani's starting dialogue
         System.out.println();
         simpleStatement("Suhani", false, "header");
@@ -1044,7 +1061,6 @@ class SignalTower extends Methods {
         delay(5);
         waitForEnter("Press Enter to Continue...");
         System.out.println();
-        
 
         // Arjun Making Plan
         simpleStatement("Arjun", false, "header");
@@ -1061,7 +1077,7 @@ class SignalTower extends Methods {
             } else if (i <= 100) {
                 System.out.print("\r Analysing Fail Possibilities..." + i + "%");
             }
-            delayBelow1sec(40);
+            delayBelow1sec(30);
         }
 
         // three Plan Suggest by arjun
@@ -1099,16 +1115,19 @@ class SignalTower extends Methods {
         } while (!(pathChoice.equals("1") || pathChoice.equals("2") || pathChoice.equals("3")));
 
         System.out.println();
-        delay(2);
+        delay(3);
 
-        sceneTitle("Arjun walks through a massive corridor of shifting light, where data flows like rivers around them. The air is electric, pulsing, alive.");
+        sceneTitle(
+                "Arjun walks through a massive corridor of shifting light, where data flows like rivers around them. The air is electric, pulsing, alive.");
         delay(5);
 
         System.out.println();
         simpleStatement("Professor(TextIT)", true, "header");
-        delay(1);
-        simpleStatement("Stay alert. You're inside the most dangerous part of Eclipsera. If NEXUS realizes you're here—", true, "bordered");
-        delay(4);
+        delay(2);
+        simpleStatement(
+                "Stay alert. You're inside the most dangerous part of Eclipsera. If NEXUS realizes you're here—", true,
+                "bordered");
+        delay(5);
 
         simpleStatement("NEXUS Prime (booming, omnipresent voice):", false, "header");
         delay(2);
@@ -1124,7 +1143,8 @@ class SignalTower extends Methods {
 
         simpleStatement("Professor (via TextIT)", false, "header");
         delay(3);
-        simpleStatement("This is all about precision. One mistake, and we're exposed. Move carefully.", true, "bordered");
+        simpleStatement("This is all about precision. One mistake, and we're exposed. Move carefully.", true,
+                "bordered");
         delay(5);
 
         // task 1
@@ -1180,7 +1200,7 @@ class SignalTower extends Methods {
             solved = true;
             String hint = "A Nexus drone patrols a hallway, Arjun must move from the Shortest Path covering all four Checkpoints?";
             String format = "Format ex --> A-D-B-C";
-            String question = "Chose the path from below" ;
+            String question = "Chose the path from below";
             String answer = "A-B-C-D";
             String[] options = { "A-C-B-D", "A-B-D-C", "A-B-C-A", "A-B-C-D" };
             String chosenCharacter = switchCharacter();
@@ -1203,9 +1223,10 @@ class SignalTower extends Methods {
             solved = solvechallenge(format, hint, chosenCharacter, "Alex", question, options, answer,
                     correctStatement, incorrectStatement);
         } while (!solved);
-
+        System.out.println("");
         simpleStatement("<< Arjun enters The Network's Outer Core, but something feels wrong… >>", true, "plain");
     }
+
     // Worst Route Suggested by Arjun
     void worstRoute() {
         sceneTitle(
@@ -1214,7 +1235,8 @@ class SignalTower extends Methods {
 
         simpleStatement("Professor (via TextIT)", false, "header");
         delay(3);
-        simpleStatement("This is all about precision. One mistake, and we're exposed. Move carefully.", true, "bordered");
+        simpleStatement("This is all about precision. One mistake, and we're exposed. Move carefully.", true,
+                "bordered");
         delay(5);
 
         // task 1
@@ -1268,7 +1290,7 @@ class SignalTower extends Methods {
             solved = true;
             String hint = "Alex must decode an encryption key by following a simple shift cipher.";
             String format = "Format ex --> NOVA";
-            String question = "The key is encrypted: 'SRCEEU'." ;
+            String question = "The key is encrypted: 'SRCEEU'.";
             String answer = "Secure";
             String[] options = { "SREECU", "TSDFFV", "SECURE", "RSBDDT" };
             String chosenCharacter = switchCharacter();
@@ -1277,9 +1299,8 @@ class SignalTower extends Methods {
             solved = solvechallenge(format, hint, chosenCharacter, "Alex", question, options, answer,
                     correctStatement, incorrectStatement);
         } while (!solved);
-
+        System.out.println("");
         simpleStatement("<< Arjun enters The Network's Outer Core, but something feels wrong… >>", true, "plain");
-
 
     }
 
@@ -1291,7 +1312,8 @@ class SignalTower extends Methods {
 
         simpleStatement("Professor (via TextIT)", false, "header");
         delay(3);
-        simpleStatement("This is all about precision. One mistake, and we're exposed. Move carefully.", true, "bordered");
+        simpleStatement("This is all about precision. One mistake, and we're exposed. Move carefully.", true,
+                "bordered");
         delay(5);
 
         // task 1
@@ -1318,7 +1340,8 @@ class SignalTower extends Methods {
             String chosenCharacter = switchCharacter();
             String correctStatement = "Got the ID " + answer;
             String incorrectStatement = "Robots capture arjun with wrong ID press Enter to rewind...";
-            solved = solvechallenge("Format ex. --> AB-00-CD-000", hint, chosenCharacter, "Arjun", question, options, answer,
+            solved = solvechallenge("Format ex. --> AB-00-CD-000", hint, chosenCharacter, "Arjun", question, options,
+                    answer,
                     correctStatement, incorrectStatement);
         } while (!solved);
 
@@ -1351,9 +1374,9 @@ class SignalTower extends Methods {
             solved = true;
             String hint = "5 , 25 , 40 , 30";
             String format = "Format ex --> 5643";
-            String question = "Chose the order" ;
+            String question = "Chose the order";
             String answer = "3421";
-            String[] options = { "2431" , "3421", "4132", "1234" };
+            String[] options = { "2431", "3421", "4132", "1234" };
             String chosenCharacter = switchCharacter();
             String correctStatement = "Energy flow from high to low 40-->30-->25-->5";
             String incorrectStatement = "Unstabilized...";
@@ -1361,7 +1384,7 @@ class SignalTower extends Methods {
             solved = solvechallenge(format, hint, chosenCharacter, "Suhani", question, options, answer,
                     correctStatement, incorrectStatement);
         } while (!solved);
-
+        System.out.println("");
         simpleStatement("<< Arjun enters The Network's Outer Core, but something feels wrong… >>", true, "plain");
     }
 
@@ -1458,7 +1481,7 @@ class Methods {
 
         if (!chosenCharacter.equalsIgnoreCase(actualCharacter)) {
             System.out.println();
-            
+
             System.out.println("#$$^%ivdw$#$2bjev43$#@833rRG3232digge43u4#@%%%4554jg");
             delay(2);
             for (int i = 0; i < options.length; i++) {
@@ -1515,7 +1538,7 @@ class Methods {
             } else {
                 System.out.println("\nInvalid Input Enter From( " + options[0] + "," + options[1] + "," + options[2]
                         + "," + options[3] + " )");
-                        System.out.println();
+                System.out.println();
                 waitForEnter("Press Enter to try again...");
                 System.out.println();
             }
@@ -1571,7 +1594,7 @@ class Methods {
                     chosen = "Tyson";
                     break;
                 default:
-                System.out.println();
+                    System.out.println();
                     simpleStatement("Invalid Enter From (1-4)", true, "header");
                     waitForEnter("Press Enter to Continue...");
                     retry = false;
@@ -1652,13 +1675,13 @@ class Methods {
         // for date
         for (int i = 0; i < date.length; i++) {
             System.out.print(date[i]);
-            delayBelow1sec(33);
+            delayBelow1sec(25);
         }
         // for location
         System.out.println();
         for (int i = 0; i < location.length; i++) {
             System.out.print(location[i]);
-            delayBelow1sec(33);
+            delayBelow1sec(23);
         }
     }
 
