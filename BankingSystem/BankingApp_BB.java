@@ -17,7 +17,7 @@ class BankingApp {
         do {
             System.out.println("\n-------BANKING SYSTEM APPLICATION-------");
             System.out.println(
-                    "1.Creat A Account\n2.Display all account deatils\n3.Search acc by Account type\n4.Deposit the amount\n5.Withdraw the amount\n6.Exit");
+                    "1.Creat A Account\n2.Display all account deatils\n3.Search acc by Account type\n4.Deposit the amount\n5.Withdraw the amount\n6.History\n7. Exit");
             System.out.print("Enter (1-6) : ");
             choice = sc.nextInt();
             sc.nextLine();
@@ -72,9 +72,16 @@ class BankingApp {
                     break;
 
                 case 6:
+                   System.out.print("Account Number: ");
+                   int acnumber = sc.nextInt();
+                   sc.nextLine();
+                   users[acnumber].displayDepositHistory();
+                   users[acnumber].displayWithdrawHistory();
+                    break;
+                case 7:
                     System.out.println("Thank You\n----SEE YOU SOON----");
                     break;
             }
-        } while (choice != 6);
+        } while (choice != 7);
     }
 }

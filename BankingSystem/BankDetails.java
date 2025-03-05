@@ -1,5 +1,6 @@
 package BankingSystem;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class BankDetails {
@@ -8,6 +9,8 @@ public class BankDetails {
     private String name;                // Name of Customer
     private String accountType;         //Account Type (Savings,Current)
     private long balance;               // Account Balance
+    private ArrayList<DepositHistory> depositHistory = new ArrayList<>();
+    private ArrayList<WithdrawHistory> withdrawHistory = new ArrayList<>();
 
     //Classes And Objects
     Scanner sc = new Scanner(System.in);
@@ -46,6 +49,9 @@ public class BankDetails {
         System.out.print("Enter the amount to be deposited ");
         amount = sc.nextLong();
         balance = balance + amount;
+
+        DepositHistory dh = new DepositHistory(amount);
+        depositHistory.add(dh);
     }
 
     // This method is for withdraw money
@@ -56,6 +62,8 @@ public class BankDetails {
         if (balance >= amount) {
             balance = balance - amount;
             System.out.println("Updated balance is " + balance);
+            WithdrawHistory wh = new WithdrawHistory(amount);
+            withdrawHistory.add(wh);
         } else {
             System.out.println("Your balance is less than the " + amount + "\n" + "Transaction failed");
         }
@@ -99,5 +107,20 @@ public class BankDetails {
         if (!flag) {
             System.out.println("Account Not Found!");
         }
-    }    
+    }   
+    
+    
+    protected void displayDepositHistory() {
+        System.out.println("Deposit History:");
+        for (DepositHistory dh : depositHistory) {
+            System.out.println(dh);
+        }
+    }
+
+    protected void displayWithdrawHistory() {
+        System.out.println("Withdraw History:");
+        for (WithdrawHistory wh : withdrawHistory) {
+            System.out.println(wh);
+        }
+    }
 }
