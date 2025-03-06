@@ -45,23 +45,6 @@ Each system will be organized in its own directory and include:
 - **Source code (Java)**: All the relevant code files for the system.
 - **LICENSE**: The MIT license for the project.
 
-## How to Use
-
-To use or contribute to the systems in this repository, follow these simple steps:
-
-### 1. Clone the Repository
-
-```vb
-git clone https://github.com/Parshwa-wq/Systems.git
-cd Systems
-```
-### 2. Choose the System
--Select the system you want to work on from the available directories.
--For example, to work with the Shopping_list_Tracker:
-
-```vb
-cd Shopping_list_Tracker
-```
 # 4. Contribute
 #### We welcome contributions! If you want to add a new system or improve an existing one, follow these steps:
 
