@@ -10,7 +10,7 @@ class EmployData {
 
         while (true) {
             System.out.print(
-                    "Enter Choice:\n1. Add new Employee\n2. PRINT EMPLOYEEDATA\n3. Modify Detail of Employee\n4. EXIT\n-->");
+                    "Enter Choice:\n1. Add new Employee\n2. PRINT EMPLOYEEDATA\n3. Modify Detail of Employee\n4. Remove A Employee\n5. EXIT\n-->");
             int choice = sc.nextInt();
 
             switch (choice) {
@@ -25,10 +25,20 @@ class EmployData {
                     break;
                 }
                 case 3: {
-                    Modifier();
+                    modify();
                     break;
                 }
                 case 4: {
+                    int id = search();
+                    if (id == -1) {
+                        return;
+                    }
+                    else{
+                        EmployeeManager.removeEmployee(id);
+                    }
+                    break;
+                }
+                case 5: {
                     System.out.print("Exit");
                     return;
                 }
@@ -62,7 +72,7 @@ class EmployData {
      * --> Use of object :- to Take Input's
      * 
      */
-    private static void Modifier() {
+    private static void modify() {
 
         // Variables
         String modifyWhat;
@@ -71,7 +81,7 @@ class EmployData {
         // Classes and there Object
         Scanner modifier = new Scanner(System.in);
 
-        id = Search();
+        id = search();
 
         if (id == -1) {
             return;
@@ -119,7 +129,7 @@ class EmployData {
      * --> Use of object :- to Take Input's
      * 
      */
-    private static int Search() {
+    private static int search() {
 
         // Variables
         String searchBy;

@@ -58,4 +58,34 @@ public class EmployeeManager extends Employee {
             employeeData.get(id).setEmployeeDesignation(designation);
         }
     }
+
+    //Remove Employee
+    public static void removeEmployee(int id){
+
+        String confirmation;
+
+        // Classes And There Objects
+        Scanner sc = new Scanner(System.in);
+
+        do {
+            System.out.print("Are You Sure(Y/N) : ");
+            confirmation = sc.next();
+
+            if (confirmation.equalsIgnoreCase("Y")) {
+
+                Employee.employeeData.remove(id);
+                System.out.println("Employee Deleted SuccessFully");
+                return;
+
+            }else if (confirmation.equalsIgnoreCase("N")) {
+                
+                System.out.println("Terminated Employee Deletation");
+                return;
+            }
+            else{
+                System.out.println("Invalide KeyWord Press \"Y\" or \"N\"");
+            }
+        } while (!(confirmation.equalsIgnoreCase("Y") || confirmation.equalsIgnoreCase("N")));
+
+    }
 }
