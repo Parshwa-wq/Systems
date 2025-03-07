@@ -10,7 +10,7 @@ class EmployData {
 
         while (true) {
             System.out.print(
-                    "Enter Choice:\n1. Add new Employee\n2. PRINT EMPLOYEEDATA\n3. Modify Detail of Employee\n4. Remove A Employee\n5. EXIT\n-->");
+                    "Enter Choice:\n1. Add new Employee\n2. PRINT EMPLOYEEDATA\n3. Modify Detail of Employee\n4. Remove A Employee\n5. Sort Employee\n6. EXIT\n-->");
             int choice = sc.nextInt();
 
             switch (choice) {
@@ -31,13 +31,18 @@ class EmployData {
                     int id = search();
                     if (id == -1) {
                         continue;
-                    }
-                    else{
+                    } else {
                         EmployeeManager.removeEmployee(id);
                     }
                     break;
                 }
-                case 5: {
+                case 5:{
+                    System.out.println("Sort By:\n1. Name\n2. Salary\n3. Experience");
+                    int sortChoice = sc.nextInt();
+                    EmployeeManager.sortEmployees(sortChoice);
+                    break;
+                }
+                case 6: {
                     System.out.print("Exit");
                     return;
                 }
@@ -46,9 +51,6 @@ class EmployData {
             }
         }
     }
-
-
-
 
     /**
      * The Method 'Modifier is used to modify Name or Designation of a Employee'
@@ -103,8 +105,6 @@ class EmployData {
         } while (!(modifyWhat.equals("1") || modifyWhat.equals("2")));
     }
 
-
-
     /**
      * The Method 'Search is used to Search for a Employee on Bases of Name or
      * Designation of a Employee.
@@ -112,8 +112,10 @@ class EmployData {
      * 1)It asks for How to search By --> (Name or Designation).
      * 2)Then it calls the respective methods of class Employee To Search for
      * employee
-     * 2.1)If We chose Name Then it calls Method searchByname of Class Employee LOC --> 105
-     * 2.2)if We chose ID then it calls Method searchByID of Class Employee LOC --> 130
+     * 2.1)If We chose Name Then it calls Method searchByname of Class Employee LOC
+     * --> 105
+     * 2.2)if We chose ID then it calls Method searchByID of Class Employee LOC -->
+     * 130
      * user also it validate if input is within valid range( Greater than 1 & Less
      * than Total Number of Employee count)
      * 3)Then it returns the ID if it finds the employee with that Name or ID

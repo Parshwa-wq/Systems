@@ -1,6 +1,8 @@
 package EmployeeDataSystem;
 
 import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Scanner;
 
 public class EmployeeManager extends Employee {
@@ -87,5 +89,36 @@ public class EmployeeManager extends Employee {
                 System.out.println("Invalide KeyWord Press \"Y\" or \"N\"");
             }
         } while (!(confirmation.equalsIgnoreCase("Y") || confirmation.equalsIgnoreCase("N")));
+    }
+
+    /**
+     * This Method sortEmployees is used to Sort Employees Based on User Choice(Name, Salary or Experience)
+     * Working Method
+     * 1) Fetches User choice either name or salary or experience
+     * 2) Uses Collection Library to sort
+     *  2.1) Sort by name
+     *  2.2) Sort by Salary (Low TO High)
+     *  2.3)nSort by experience (Most to Least)
+     * 3) After Sorting It displays details of all Employee
+     */
+    public static void sortEmployees(int choice) {
+        switch (choice) {
+            case 1: // Sort by Name
+                Collections.sort(employeeData, Comparator.comparing(Employee::getEmployeeName));
+                break;
+            case 2: // Sort by Salary (Lowest to Highest)
+                Collections.sort(employeeData, Comparator.comparing(Employee::getEmployeeSalary));
+                break;
+            case 3: // Sort by Experience (Most to Least)
+                Collections.sort(employeeData, Comparator.comparing(Employee::getEmployeeExperience).reversed());
+                break;
+            default:
+                System.out.println("Invalid choice. Try again.");
+                return;
+        }
+        System.out.println("Sorting Complete! Displaying Sorted Employees:");
+        for (Employee e : employeeData) {
+            System.out.println("\n" + e.toString());
+        }
     }
 }
