@@ -155,7 +155,7 @@ public class EmployeeManager {
 
                         System.out.println("Name: " + Employee.employeeData.get(i).getEmployeeName()
                                 + " | Designation: " + Employee.employeeData.get(i).getEmployeeDesignation()
-                                + " | Salary: " + Employee.employeeData.get(i).getEmployeeSalary()
+                                + " | Salary: " + Employee.employeeData.get(i).getEmployeeCurrentSalary()
                                 + " | Joining Year: " + Employee.employeeData.get(i).getEmployeeJoiningYear()
                                 + " | Experience: " + Employee.employeeData.get(i).getEmployeeExperience() + " Years");
                     }
@@ -175,12 +175,12 @@ public class EmployeeManager {
                 System.out.println("Matching Employees:");
 
                 for (int i = 0; i < Employee.employeeData.size(); i++) {
-                    if (Employee.employeeData.get(i).getEmployeeSalary() > minSalary
-                            && Employee.employeeData.get(i).getEmployeeSalary() < maxSalary) {
+                    if (Employee.employeeData.get(i).getEmployeeCurrentSalary() > minSalary
+                            && Employee.employeeData.get(i).getEmployeeCurrentSalary() < maxSalary) {
 
                         System.out.println("Name: " + Employee.employeeData.get(i).getEmployeeName()
                                 + " | Designation: " + Employee.employeeData.get(i).getEmployeeDesignation()
-                                + " | Salary: " + Employee.employeeData.get(i).getEmployeeSalary()
+                                + " | Salary: " + Employee.employeeData.get(i).getEmployeeCurrentSalary()
                                 + " | Joining Year: " + Employee.employeeData.get(i).getEmployeeJoiningYear()
                                 + " | Experience: " + Employee.employeeData.get(i).getEmployeeExperience() + " Years");
                     }
@@ -198,7 +198,7 @@ public class EmployeeManager {
 
                         System.out.println("Name: " + Employee.employeeData.get(i).getEmployeeName()
                                 + " | Designation: " + Employee.employeeData.get(i).getEmployeeDesignation()
-                                + " | Salary: " + Employee.employeeData.get(i).getEmployeeSalary()
+                                + " | Salary: " + Employee.employeeData.get(i).getEmployeeCurrentSalary()
                                 + " | Joining Year: " + Employee.employeeData.get(i).getEmployeeJoiningYear()
                                 + " | Experience: " + Employee.employeeData.get(i).getEmployeeExperience() + " Years");
                     }
@@ -209,6 +209,44 @@ public class EmployeeManager {
                 System.out.println("Invalid Input Enter From (1 to 3)");
                 break;
         }
+    }
+
+    /**
+     * This Method is used To Search employee By Name
+     * Working Steps
+     * 1)It fetches name of employee to search for
+     * 2)then a loop is initialised till length of the employeeData to find employee
+     * 3)if employee with that name is found then it returns id of that employee
+     * else it returns -1
+     */
+    // Method To Search A Employee by Name
+    public static int searchByname(String name) {
+        for (int i = 0; i < Employee.employeeData.size(); i++) {
+            if (name.equalsIgnoreCase(Employee.employeeData.get(i).getEmployeeName())) {
+                return i;
+            }
+        }
+        System.out.println("Employee not Found");
+        return -1;
+    }
+
+    /**
+     * This Method is used To Search employee By ID
+     * Working Steps
+     * 1)It fetches ID of employee to search for
+     * 2)then a loop is initialised till length of the employeeData to find employee
+     * 3)if employee with that nameID is found then it returns ID of that employee
+     * else it returns -1
+     */
+    // Method To Search A Employee by ID
+    public static int searchByID(int id) {
+        for (int i = 0; i < Employee.employeeData.size(); i++) {
+            if (id == Employee.employeeData.get(i).getEmployeeID()) {
+                return i;
+            }
+        }
+        System.out.println("Employee not Found");
+        return -1;
     }
 
     /**
@@ -228,7 +266,7 @@ public class EmployeeManager {
                 Collections.sort(Employee.employeeData, Comparator.comparing(Employee::getEmployeeName));
                 break;
             case 2: // Sort by Salary (Lowest to Highest)
-                Collections.sort(Employee.employeeData, Comparator.comparing(Employee::getEmployeeSalary));
+                Collections.sort(Employee.employeeData, Comparator.comparing(Employee::getEmployeeCurrentSalary));
                 break;
             case 3: // Sort by Experience (Most to Least)
                 Collections.sort(Employee.employeeData,

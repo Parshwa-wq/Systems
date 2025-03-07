@@ -10,8 +10,10 @@ public class Employee {
     private int employeeID;
     private int employeeJoiningYear;
     private int employeeExperience;
-    private double employeeSalary;
+    private double employeeInitialSalary;
+    private double employeeCurrentSalary;
     private double employeeIncrementedSalary;
+    private double employeePerformanceRating;
     protected static int employeeNumber = 1;
 
     // Some Important variables
@@ -30,15 +32,17 @@ public class Employee {
      * this constructor is used to store the details of new employee of organization
      */
     public Employee(String employeeName, String employeeDesignation, int employeeJoiningYear, int employeeExperience,
-            double employeeSalary, double employeeIncrementedSalary) {
+            double employeeSalary, double employeeIncrementedSalary , double employeeCurrentSalary , double employeePerformanceRating) {
 
         this.employeeName = employeeName;
         this.employeeDesignation = employeeDesignation;
         this.employeeID = employeeNumber;
         this.employeeJoiningYear = employeeJoiningYear;
         this.employeeExperience = employeeExperience;
-        this.employeeSalary = employeeSalary;
+        this.employeeInitialSalary = employeeSalary;
         this.employeeIncrementedSalary = employeeIncrementedSalary;
+        this.employeeCurrentSalary = employeeCurrentSalary;
+        this.employeePerformanceRating = employeePerformanceRating;
         employeeNumber++;
     }
 
@@ -75,13 +79,23 @@ public class Employee {
         return employeeExperience;
     }
 
-    public double getEmployeeSalary() {
-        return employeeSalary;
+    public double getEmployeeInitialSalary() {
+        return employeeInitialSalary;
+    }
+
+    public double getEmployeeCurrentSalary() {
+        return employeeCurrentSalary;
     }
 
     public double getEmployeeIncrementedSalary() {
         return employeeIncrementedSalary;
     }
+
+    public double getEmployeePerformanceRating() {
+        return employeePerformanceRating;
+    }
+
+    
 
     /**
      * This Methods stated below are Setter Methods. has the term suggest they are
@@ -100,51 +114,14 @@ public class Employee {
     }
 
     /**
-     * This Method is used To Search employee By Name
-     * Working Steps
-     * 1)It fetches name of employee to search for
-     * 2)then a loop is initialised till length of the employeeData to find employee
-     * 3)if employee with that name is found then it returns id of that employee
-     * else it returns -1
-     */
-    // Method To Search A Employee by Name
-    public static int searchByname(String name) {
-        for (int i = 0; i < Employee.employeeData.size(); i++) {
-            if (name.equalsIgnoreCase(Employee.employeeData.get(i).getEmployeeName())) {
-                return i;
-            }
-        }
-        System.out.println("Employee not Found");
-        return -1;
-    }
-
-    /**
-     * This Method is used To Search employee By ID
-     * Working Steps
-     * 1)It fetches ID of employee to search for
-     * 2)then a loop is initialised till length of the employeeData to find employee
-     * 3)if employee with that nameID is found then it returns ID of that employee
-     * else it returns -1
-     */
-    // Method To Search A Employee by ID
-    public static int searchByID(int id) {
-        for (int i = 0; i < Employee.employeeData.size(); i++) {
-            if (id == Employee.employeeData.get(i).getEmployeeID()) {
-                return i;
-            }
-        }
-        System.out.println("Employee not Found");
-        return -1;
-    }
-
-    /**
      * Display the Details of a particular Employee in a good Format
      */
     @Override
     public String toString() {
         return "Name: " + employeeName
                 + "\nDesignation:" + employeeDesignation + "\nID: " + employeeID + "\nJoining Year: "
-                + employeeJoiningYear + "\nExprience: " + employeeExperience + "\nSalary: " + employeeSalary
+                + employeeJoiningYear + "\nExprience: " + employeeExperience + "\nInitial Salary: "
+                + employeeInitialSalary + "\nCurrent Salary: " + employeeCurrentSalary
                 + "\nIncrement in Salary: " + employeeIncrementedSalary;
     }
 }

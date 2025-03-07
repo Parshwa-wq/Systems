@@ -157,13 +157,13 @@ class EmployData {
             if (searchBy.equals("1")) {
                 System.out.print("Enter Name: ");
                 String name = searchEmployee.nextLine();
-                id = Employee.searchByname(name);
+                id = EmployeeManager.searchByname(name);
                 return id;
             } else if (searchBy.equals("2")) {
                 System.out.print("Enter ID: ");
                 id = searchEmployee.nextInt();
                 searchEmployee.nextLine(); // so next line is not skiped
-                return Employee.searchByID(id);
+                return EmployeeManager.searchByID(id);
             } else {
                 System.out.println("Invalid Input Enter either 1 or 2");
             }
