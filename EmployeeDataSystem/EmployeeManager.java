@@ -149,11 +149,15 @@ public class EmployeeManager {
                     designation = input.nextLine();
                 } while (!EmployeeDataCollector.verifyDesignation(designation));
 
-                System.out.println("All employee With Designation: " + designation); // Header of Design
-
+                System.out.println("Matching Employees:");
                 for (int i = 0; i < Employee.employeeData.size(); i++) {
                     if (designation.equalsIgnoreCase(Employee.employeeData.get(i).getEmployeeDesignation())) {
-                        System.out.println("\n" + Employee.employeeData.get(i).toString());
+
+                        System.out.println("Name: " + Employee.employeeData.get(i).getEmployeeName()
+                                + " | Designation: " + Employee.employeeData.get(i).getEmployeeDesignation()
+                                + " | Salary: " + Employee.employeeData.get(i).getEmployeeSalary()
+                                + " | Joining Year: " + Employee.employeeData.get(i).getEmployeeJoiningYear()
+                                + " | Experience: " + Employee.employeeData.get(i).getEmployeeExperience() + " Years");
                     }
                 }
             }
@@ -168,13 +172,17 @@ public class EmployeeManager {
                 int maxSalary = input.nextInt(); // Maximum Salary in range
                 input.nextLine();
 
-                System.out.println("All employee With Salary Range: (" + minSalary + "," + maxSalary + " )"); // Header
-                                                                                                              // Design
+                System.out.println("Matching Employees:");
 
                 for (int i = 0; i < Employee.employeeData.size(); i++) {
                     if (Employee.employeeData.get(i).getEmployeeSalary() > minSalary
                             && Employee.employeeData.get(i).getEmployeeSalary() < maxSalary) {
-                        System.out.println("\n" + Employee.employeeData.get(i).toString());
+
+                        System.out.println("Name: " + Employee.employeeData.get(i).getEmployeeName()
+                                + " | Designation: " + Employee.employeeData.get(i).getEmployeeDesignation()
+                                + " | Salary: " + Employee.employeeData.get(i).getEmployeeSalary()
+                                + " | Joining Year: " + Employee.employeeData.get(i).getEmployeeJoiningYear()
+                                + " | Experience: " + Employee.employeeData.get(i).getEmployeeExperience() + " Years");
                     }
                 }
 
@@ -184,11 +192,15 @@ public class EmployeeManager {
                 int minExperience = input.nextInt();
                 input.nextLine();
 
-                System.out.println("All employee With Experience More Than: " + minExperience);
-
+                System.out.println("Matching Employees:");
                 for (int i = 0; i < Employee.employeeData.size(); i++) {
                     if (Employee.employeeData.get(i).getEmployeeExperience() > minExperience) {
-                        System.out.println("\n" + Employee.employeeData.get(i).toString());
+
+                        System.out.println("Name: " + Employee.employeeData.get(i).getEmployeeName()
+                                + " | Designation: " + Employee.employeeData.get(i).getEmployeeDesignation()
+                                + " | Salary: " + Employee.employeeData.get(i).getEmployeeSalary()
+                                + " | Joining Year: " + Employee.employeeData.get(i).getEmployeeJoiningYear()
+                                + " | Experience: " + Employee.employeeData.get(i).getEmployeeExperience() + " Years");
                     }
                 }
                 break;
