@@ -11,16 +11,14 @@ public class EmployeeManager {
     static String designation;
 
     /**
-     * This Method is use to Update Name of A Person
-     * Working Steps
-     * 1)It takes/Fetch id of which employee you want to change name
-     * 2)Then it takes Updated Name Until A valid name is given to the Employee
-     * 2.1)To verify it Uses Same Algo Of EmployeeDataCollector class(verifyname LOC
-     * --> 123 to 131)
-     * 3)And finnaly it Updates Name of the Employee
+     * This method is used update Name of an Employee.
+     * First it fetches ID of the Employee we have to change Name.
+     * Then it takes Name as input and then it verifies whether a Employee with the
+     * Same Name already exist in the organization.
+     * If there is an existing Employee it just returns with a prompt "Employee
+     * Already Exist" and then prompt to reenter other name.
+     * Else it updates the Name of the Employee.
      */
-
-    // Update Name
     public static void updateName(int id) {
 
         // Classes And There Objects
@@ -37,16 +35,14 @@ public class EmployeeManager {
     }
 
     /**
-     * This Method is use to Update Designation of A Person
-     * Working Steps
-     * 1)It takes/Fetch id of which employee you want to change Designation
-     * 2)Then it takes Updated Designation Until A valid Designation is Chosen for
-     * the Employee form this three(junior, executive or manager)
-     * 2.1)To verify it Uses Same Algo Of EmployeeDataCollector
-     * class(verifyDesignation LOC --> 137 to 144)
-     * 3)And finnaly it Updates Designation of the Employee
+     * This method is used to update Designation of an Employee.
+     * First it fatches id of the Employee we have to change Designation.
+     * Then it takes the input of new Designation.
+     * It then validate is there any Typo in Designation.
+     * If there is some invalid input the it return with message "Invalid
+     * Designation" and then prompt to reenter the Designation.
+     * Otherwise it updates the Designation of the Employee.
      */
-    // Update Designation
     public static void updateDesignation(int id) {
 
         // Classes And There Objects
@@ -61,7 +57,13 @@ public class EmployeeManager {
         }
     }
 
-    // Remove Employee
+    /**
+     * This Method is used to delete a Employee Details
+     * to do it first it fetch the ID of the Employee you want to delete
+     * Then it prompts for Confirmation whether YES or NO (Y/N)
+     * if we Press 'Y' then it delete the Employee from Software
+     * if we Press 'N' then it return with Prompt "Terminated Employee Deletation"
+     */
     public static void removeEmployee(int id) {
 
         String confirmation;
@@ -257,7 +259,7 @@ public class EmployeeManager {
      * 2) Uses Collection Library to sort
      * 2.1) Sort by name
      * 2.2) Sort by Salary (Low TO High)
-     * 2.3)nSort by experience (Most to Least)
+     * 2.3) Sort by experience (Most to Least)
      * 3) After Sorting It displays details of all Employee
      */
     public static void sortEmployees(int choice) {

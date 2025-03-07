@@ -19,9 +19,8 @@ public class Employee {
     // Some Important variables
     boolean verifier = false;
 
-    /**
-     * This ArrayList will store data of each employee working in the organization
-     */
+
+    //This ArrayList will store data of each employee working in the organization
     public static ArrayList<Employee> employeeData = new ArrayList<>();
 
     public Employee() {
@@ -46,18 +45,7 @@ public class Employee {
         employeeNumber++;
     }
 
-    /**
-     * This Methods stated below are Getter Methods. has the term suggest they are
-     * used to get information of a particular employee
-     * Methods and there work
-     * 1) To Return Name of Employee
-     * 2) To Return Designation of Employee
-     * 3) To Return ID of Employee
-     * 4) To Return Joining Year of Employee
-     * 5) To Return Experience of Employee
-     * 6) To Return Salary of Employee
-     * 7) To Return Increment in salary of Employee
-     */
+    
     // Getter Method's
     public String getEmployeeName() {
         return employeeName;
@@ -96,14 +84,6 @@ public class Employee {
     }
 
     
-
-    /**
-     * This Methods stated below are Setter Methods. has the term suggest they are
-     * used to set information of a particular employee
-     * Methods and there work
-     * 1) To set Name of Employee
-     * 2) To set Designation of Employee
-     */
     // Setter Method's
     public void setEmployeeName(String employeeName) {
         this.employeeName = employeeName;
@@ -113,9 +93,8 @@ public class Employee {
         this.employeeDesignation = employeeDesignation;
     }
 
-    /**
-     * Display the Details of a particular Employee in a good Format
-     */
+
+    // Display the Details of a particular Employee in a good Format
     @Override
     public String toString() {
         return "Name: " + employeeName

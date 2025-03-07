@@ -25,6 +25,7 @@ public class EmployeeDataCollector {
         experience();
         salary();
         incrementedSalary();
+        calculatePerformanceRating();
         Employee e = new Employee(name, designation, joiningYear, experience, initialSalary, incrementedSalary,
                 currentSalary, performanceRating);
         Employee.employeeData.add(e);
@@ -33,9 +34,12 @@ public class EmployeeDataCollector {
     // Data Collecting Methods
 
     /**
-     * Method name is used to collect Name of Employee
-     * It first verifies that An Employee with same name exist previously or not
-     * and if no such employee is found then it allows/sets the name
+     * This method is used to set the name of the Employee
+     * First it takes name as input and then it verifies whether a employee with the
+     * same name already exist in the organization.
+     * if there is an existing employee it just returns with a prompt "Employee
+     * Already Exist" and then prompt to reenter other name
+     * else it sets the name of the employee
      */
     public void name() {
         do {
@@ -45,10 +49,12 @@ public class EmployeeDataCollector {
     }
 
     /**
-     * Method 'designation' is used to collect/set the designation of employe out of
-     * this three "junior", "executive" or "manager"
-     * it also has basic validation of like we have entered correct entries(correct
-     * spelling).
+     * This method is used to set the designation of the employee
+     * First it takes input whether employee is (Junior, executive or manager)
+     * it then validate is there any Typo in designation
+     * if there is some invalid input the it return with message "Invalid
+     * designation" and then prompt to reenter the designation
+     * otherwise it set the designation of the employee
      */
     public void designation() {
         do {
@@ -58,7 +64,8 @@ public class EmployeeDataCollector {
     }
 
     /**
-     * Method 'joiningYear' is used to collect/set the Joining Year of the employee
+     * This Method is usewd to set the joining year of an employee till now there
+     * are no verifications but in future there can be
      */
     public void joiningYear() {
         System.out.print("Enter Joining Year");
@@ -67,7 +74,8 @@ public class EmployeeDataCollector {
     }
 
     /**
-     * Method 'experience' is used to calc Experience of a employee
+     * this method is used to calculate experience of employee it calc Experience
+     * automaticaly using current year - joining year
      */
     public void experience() {
         experience = LocalDate.now().getYear() - joiningYear;
@@ -75,6 +83,7 @@ public class EmployeeDataCollector {
 
     /**
      * Method 'salary' is used to calc Salary of Employee
+     * admin has to enter salary of employee manualy
      */
     public void salary() {
         System.out.print("Enter Salary");
@@ -82,11 +91,29 @@ public class EmployeeDataCollector {
     }
 
     /**
-     * Method 'incrementedSalary' is used to calc the Increment of a employee over
-     * year's
-     * the Algorithm consist Factors like "designation", "experience"
-     * the Algorithm will evolve with time to give better and proper increment on
-     * basis of employ talent and nature
+     * this methods is used to calc increment of employee over years
+     * it uses designation and experience to calc increment
+     * 
+     * for Junior
+     * if experience is Less than 2 year then increment is tenth part of the initial
+     * salary per annum
+     * if experience is More than 2 year then increment is fifth part of the initial
+     * salary per annum
+     * 
+     * for Executive
+     * if experience is Less than 1 year then increment is tenth part of the initial
+     * salary + 500 rupees per annum
+     * if experience is More than 2 year then increment is 15/100th part of the
+     * initial salary + 1000 rupees per annum
+     * 
+     * for Manager
+     * if experience is Less than 10 year then increment is 20th part of the initial
+     * salary + 500 rupees per annum
+     * if experience is More than 10 year then increment is 15/100th part of the
+     * initial salary + 1000 rupees per annum
+     * 
+     * after increment is calculated we also calc current salary by multiplying
+     * increment with experience
      */
     public static void incrementedSalary() {
         if (designation.equalsIgnoreCase("junior")) {
@@ -113,6 +140,7 @@ public class EmployeeDataCollector {
             }
 
         }
+
         currentSalary = incrementedSalary * experience;
     }
 
@@ -179,9 +207,8 @@ public class EmployeeDataCollector {
     // Verifying Method's
 
     /**
-     * Method 'verifyName' consist the Algorithm to Find whether the Employee
-     * already exist in company or not
-     * its a simple Search algorithm
+     * this method just uses linear search Algorithm to find if employee with the
+     * name exist in organization
      * Complexity time :- o(n) , space :- o(1)
      */
     public static boolean verifyName(String name) {
@@ -195,9 +222,8 @@ public class EmployeeDataCollector {
     }
 
     /**
-     * Method 'verifyDesignation' is a simple Algorithm to varidate Whether a
-     * Designation given to a employe is correct or not
-     * Is'nt there a typo etc...
+     * this method is just to validate that the designation is correct (junior ,
+     * executive , manager)
      */
     public static boolean verifyDesignation(String designation) {
         if (designation.equalsIgnoreCase("junior") || designation.equalsIgnoreCase("executive")
