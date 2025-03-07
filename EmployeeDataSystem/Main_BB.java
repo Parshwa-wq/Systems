@@ -10,7 +10,7 @@ class EmployData {
 
         while (true) {
             System.out.print(
-                    "Enter Choice:\n1. Add new Employee\n2. PRINT EMPLOYEEDATA\n3. Modify Detail of Employee\n4. Remove A Employee\n5. Sort Employee\n6. EXIT\n-->");
+                    "Enter Choice:\n1. Add new Employee\n2. PRINT EMPLOYEEDATA\n3. Modify Detail of Employee\n4. Remove A Employee\n5. Sort Employee\n6. Bulk Search\n7. EXIT\n-->");
             int choice = sc.nextInt();
 
             switch (choice) {
@@ -39,10 +39,18 @@ class EmployData {
                 case 5:{
                     System.out.println("Sort By:\n1. Name\n2. Salary\n3. Experience");
                     int sortChoice = sc.nextInt();
+                    sc.nextLine();
                     EmployeeManager.sortEmployees(sortChoice);
                     break;
                 }
-                case 6: {
+                case 6:{
+                    System.out.println("Search By:\n1. Designation\n2. Salary Range\n3. Experience");
+                    int searchChoice = sc.nextInt();
+                    sc.nextLine();
+                    EmployeeManager.advanceSearch(searchChoice);
+                    break;
+                }
+                case 7: {
                     System.out.print("Exit");
                     return;
                 }
