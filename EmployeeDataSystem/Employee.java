@@ -100,7 +100,7 @@ public class Employee {
     }
 
     /**
-     * This Method is USed To Search employee By Name
+     * This Method is used To Search employee By Name
      * Working Steps
      * 1)It fetches name of employee to search for
      * 2)then a loop is initialised till length of the employeeData to find employee
@@ -111,6 +111,25 @@ public class Employee {
     public static int searchByname(String name) {
         for (int i = 0; i < Employee.employeeData.size(); i++) {
             if (name.equalsIgnoreCase(Employee.employeeData.get(i).getEmployeeName())) {
+                return i;
+            }
+        }
+        System.out.println("Employee not Found");
+        return -1;
+    }
+
+    /**
+     * This Method is used To Search employee By ID
+     * Working Steps
+     * 1)It fetches ID of employee to search for
+     * 2)then a loop is initialised till length of the employeeData to find employee
+     * 3)if employee with that nameID is found then it returns ID of that employee
+     * else it returns -1
+     */
+    // Method To Search A Employee by ID
+    public static int searchByID(int id) {
+        for (int i = 0; i < Employee.employeeData.size(); i++) {
+            if (id == Employee.employeeData.get(i).getEmployeeID()) {
                 return i;
             }
         }

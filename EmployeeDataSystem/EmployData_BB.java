@@ -19,9 +19,8 @@ class EmployData {
                     break;
                 }
                 case 2: {
-                    System.out.println("Enter Employee ID");
-                    int id = sc.nextInt();
-                    System.out.println(Employee.employeeData.get(id - 1).toString());
+                    int id = search();
+                    System.out.println(Employee.employeeData.get(id).toString());
                     break;
                 }
                 case 3: {
@@ -31,7 +30,7 @@ class EmployData {
                 case 4: {
                     int id = search();
                     if (id == -1) {
-                        return;
+                        continue;
                     }
                     else{
                         EmployeeManager.removeEmployee(id);
@@ -47,6 +46,9 @@ class EmployData {
             }
         }
     }
+
+
+
 
     /**
      * The Method 'Modifier is used to modify Name or Designation of a Employee'
@@ -70,7 +72,6 @@ class EmployData {
      * #Object of Classes
      * 1)modifier --> object of class :- Scanner
      * --> Use of object :- to Take Input's
-     * 
      */
     private static void modify() {
 
@@ -102,6 +103,8 @@ class EmployData {
         } while (!(modifyWhat.equals("1") || modifyWhat.equals("2")));
     }
 
+
+
     /**
      * The Method 'Search is used to Search for a Employee on Bases of Name or
      * Designation of a Employee.
@@ -109,8 +112,8 @@ class EmployData {
      * 1)It asks for How to search By --> (Name or Designation).
      * 2)Then it calls the respective methods of class Employee To Search for
      * employee
-     * 2.1)If We chose Name Then it calls searchByname LOC --> 105
-     * 2.2)For ID it doesnot call a method but instead it returns the id enterend by
+     * 2.1)If We chose Name Then it calls Method searchByname of Class Employee LOC --> 105
+     * 2.2)if We chose ID then it calls Method searchByID of Class Employee LOC --> 130
      * user also it validate if input is within valid range( Greater than 1 & Less
      * than Total Number of Employee count)
      * 3)Then it returns the ID if it finds the employee with that Name or ID
@@ -127,7 +130,6 @@ class EmployData {
      * #Object of Classes
      * 1)searchEmployee --> object of class :- Scanner
      * --> Use of object :- to Take Input's
-     * 
      */
     private static int search() {
 
@@ -151,12 +153,7 @@ class EmployData {
                 System.out.print("Enter ID: ");
                 id = searchEmployee.nextInt();
                 searchEmployee.nextLine(); // so next line is not skiped
-
-                if (id < 1 || id > Employee.employeeData.size()) {
-                    System.out.println("Invalid ID");
-                    return -1;
-                }
-                return id - 1;
+                return Employee.searchByID(id);
             } else {
                 System.out.println("Invalid Input Enter either 1 or 2");
             }

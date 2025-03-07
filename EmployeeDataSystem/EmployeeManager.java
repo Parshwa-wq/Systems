@@ -1,5 +1,6 @@
 package EmployeeDataSystem;
 
+import java.util.Collection;
 import java.util.Scanner;
 
 public class EmployeeManager extends Employee {
@@ -78,7 +79,7 @@ public class EmployeeManager extends Employee {
                 return;
 
             }else if (confirmation.equalsIgnoreCase("N")) {
-                
+
                 System.out.println("Terminated Employee Deletation");
                 return;
             }
@@ -86,6 +87,5 @@ public class EmployeeManager extends Employee {
                 System.out.println("Invalide KeyWord Press \"Y\" or \"N\"");
             }
         } while (!(confirmation.equalsIgnoreCase("Y") || confirmation.equalsIgnoreCase("N")));
-
     }
 }
