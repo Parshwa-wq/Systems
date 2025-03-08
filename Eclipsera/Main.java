@@ -17,7 +17,7 @@
     And the final rebeliion mean the final and biggest war of this era
 
                              ----->  Eclipsera: The Final Rebellion <-----
-  */
+*/
 
   import java.util.*;
 

@@ -19,8 +19,7 @@ public class Employee {
     // Some Important variables
     boolean verifier = false;
 
-
-    //This ArrayList will store data of each employee working in the organization
+    // This ArrayList will store data of each employee working in the organization
     public static ArrayList<Employee> employeeData = new ArrayList<>();
 
     public Employee() {
@@ -31,7 +30,8 @@ public class Employee {
      * this constructor is used to store the details of new employee of organization
      */
     public Employee(String employeeName, String employeeDesignation, int employeeJoiningYear, int employeeExperience,
-            double employeeSalary, double employeeIncrementedSalary , double employeeCurrentSalary , double employeePerformanceRating) {
+            double employeeSalary, double employeeIncrementedSalary, double employeeCurrentSalary,
+            double employeePerformanceRating) {
 
         this.employeeName = employeeName;
         this.employeeDesignation = employeeDesignation;
@@ -45,7 +45,6 @@ public class Employee {
         employeeNumber++;
     }
 
-    
     // Getter Method's
     public String getEmployeeName() {
         return employeeName;
@@ -83,7 +82,6 @@ public class Employee {
         return employeePerformanceRating;
     }
 
-    
     // Setter Method's
     public void setEmployeeName(String employeeName) {
         this.employeeName = employeeName;
@@ -93,14 +91,16 @@ public class Employee {
         this.employeeDesignation = employeeDesignation;
     }
 
-
     // Display the Details of a particular Employee in a good Format
     @Override
     public String toString() {
-        return "Name: " + employeeName
-                + "\nDesignation:" + employeeDesignation + "\nID: " + employeeID + "\nJoining Year: "
-                + employeeJoiningYear + "\nExprience: " + employeeExperience + "\nInitial Salary: "
-                + employeeInitialSalary + "\nCurrent Salary: " + employeeCurrentSalary
-                + "\nIncrement in Salary: " + employeeIncrementedSalary;
+        return    "Name: " + employeeName
+                + "\nDesignation:" + employeeDesignation
+                + "\nID: " + employeeID + "\nJoining Year: " + employeeJoiningYear
+                + "\nExprience: " + employeeExperience
+                + "\nInitial Salary: " + employeeInitialSalary
+                + "\nCurrent Salary: " + employeeCurrentSalary
+                + "\nIncrement in Salary: " + employeeIncrementedSalary
+                + "\nPerformacne rating out of 10: " + employeePerformanceRating;
     }
 }
